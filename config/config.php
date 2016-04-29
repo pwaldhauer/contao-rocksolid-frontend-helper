@@ -144,12 +144,10 @@ $GLOBALS['TL_RSFH']['backendModules']['gallery_creator'] = array(
 	'table' => 'tl_gallery_creator_pictures',
 	'ceColumn' => 'gc_publish_albums',
 	'ceColumnType' => 'serialized',
-	'icon' => 'system/modules/gallery_creator/assets/images/photo.png',
-	'feModules' => array(
-		'gallery_creator',
-	),
+	'icon' => 'system/modules/gallery_creator/assets/images/picture.png',
 	'contentElements' => array(
-		'gallery_creator',
+		'gallery_creator_ce',
+		'gallery_creator_ce_news',
 	),
 );
 $GLOBALS['TL_RSFH']['backendModules']['ticker'] = array(
