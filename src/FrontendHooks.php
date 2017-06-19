@@ -440,8 +440,10 @@ class FrontendHooks
 			return $content;
 		}
 
+		$rsce = empty($row->rsce_data) ? [] : json_decode($row->rsce_data, true);
+		$toolbar = !isset($rsce['rsfh']) || $rsce['rsfh'];
 		$data = array(
-			'toolbar' => true,
+			'toolbar' => $toolbar,
 		);
 
 		if (
@@ -517,12 +519,15 @@ class FrontendHooks
 	 */
 	public function getContentElementHook($row, $content, $element)
 	{
+
 		if (! $permissions = static::checkLogin()) {
 			return $content;
 		}
 
+		$rsce = empty($row->rsce_data) ? [] : json_decode($row->rsce_data, true);
+		$toolbar = !isset($rsce['rsfh']) || $rsce['rsfh'];
 		$data = array(
-			'toolbar' => true,
+			'toolbar' => $toolbar,
 		);
 
 		if (in_array('contents', $permissions)) {
