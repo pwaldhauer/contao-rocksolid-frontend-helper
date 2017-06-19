@@ -51,8 +51,8 @@ class FrontendHelper extends \Controller
 				$data = static::addTemplateURL($data);
 			}
 		}
-
-		if (substr($template, 0, 3) === 'fe_') {
+        if ($template  === 'fe_page') {
+		//if (substr($template, 0, 3) === 'fe_') {
 
 			\System::loadLanguageFile('rocksolid_frontend_helper');
 
